@@ -17,9 +17,9 @@
       btn1.onclick = function(){
         var ipt1 = document.getElementById('input1');
         if(NKMyNumber.isMyNumber(ipt1.value)){
-          document.getElementById('span1').innerText ="マイナンバーです！";
+          document.getElementById('span1').textContent ="マイナンバーです！";
         }else{
-          document.getElementById('span1').innerText ="マイナンバーではありません！";
+          document.getElementById('span1').textContent ="マイナンバーではありません！";
         }
       };
     </script>
@@ -46,10 +46,10 @@
 
         if(myNumbers)
         {
-          document.getElementById('span2').innerText ="マイナンバーが入力された可能性があります。\nマイナンバー ："+myNumbers.toString();
+          document.getElementById('span2').textContent ="マイナンバーが入力された可能性があります。\nマイナンバー ："+myNumbers.toString();
         }else
         {
-          document.getElementById('span2').innerText ="マイナンバーはありませんでした。";
+          document.getElementById('span2').textContent ="マイナンバーはありませんでした。";
         }
       }
 
