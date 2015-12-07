@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+html {
+  font-family: arial,sans-serif;
+}
+body{
+    height: 125mm;
+    width: 73mm;
+    font-family: 'SFNSText', 'Helvetica Neue', "Meiryo UI", "MS PGothic", sans-serif;
+    margin: 0;
+}
+body .head{
+    margin-left: 25px;
+}
+body .body{
+}
+#headerbox1
+{
+  left: 15px;
+}
+#headerbox2
+{
+  left: 45px;
+}
+#headerbox3
+{
+  left: 75px;
+}
+#headerbox4
+{
+  left: 105px;
+}
+#headerbox4{
+  background-color:grey;
+  animation:breathe 5s linear 0s infinite normal;
+	-webkit-animation:breathe 5s linear 0s infinite normal;
+}
+
+@keyframes breathe {
+	/*
+	from {
+	opacity: 1;
+	}
+	to {
+	opacity: 0;
+	}
+	*/
+    0%   {opacity: 1;}
+    25%  {opacity: 0.8;}
+    50%  {opacity: 0;}
+    75%  {opacity: 0.8;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes breathe {
+    0%   {opacity: 1;}
+    25%  {opacity: 0.8;}
+    50%  {opacity: 0;}
+    75%  {opacity: 0.8;}
+    100% {opacity: 1;}
+
+}
+
+.headerbox{
+    margin: 0 5px;
+    position: absolute;
+    top: -19px;
+    border: 2px solid #888;
+    width: 15px;
+    height: 15px;
+  }
+
+.small.button {
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+}
+.box {
+    margin: 5px;
+    border: 2px solid #888;
+    font-size: 11px;
+    text-align: center;
+}
+#buttons{
+    margin-top: 100px;
+    }
+#buttons .button {
+    margin: 10 auto;
+    width: 60%;
+    height: 10%;
+    line-height: 25px;
+    color: #FFFFFF;
+    border: 0px;
+}
+#button1{
+  background-color: #0599D9;
+}
+#button2{
+  background-color: #0068B7;
+}
+#button3{
+  background-color: #ED6D00;
+}
