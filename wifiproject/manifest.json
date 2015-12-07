@@ -1,0 +1,10 @@
+{
+   "description": "Wifi Project",
+   "browser_action": {
+     "default_title": "Wifi Project",
+     "default_popup": "popup.html"
+   },
+   "manifest_version": 2,
+   "name": "Wifi Project",
+   "version": "0.1"
+}
