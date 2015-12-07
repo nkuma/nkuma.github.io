@@ -20,7 +20,7 @@ setTimeout(
         .pop()
       .end();
   },
-  0
+  50
 );
 setTimeout(
   function(){
@@ -33,7 +33,7 @@ setTimeout(
         .pop()
       .end();
     },
-  50
+  100
 );
 setTimeout(
   function(){
@@ -46,7 +46,7 @@ setTimeout(
         .pop()
       .end();
     },
-  100
+  150
 );
 setTimeout(
   function(){
@@ -61,7 +61,19 @@ setTimeout(
     },
   200
 );
-
+setTimeout(
+  function(){
+    move("#headerbox5")
+      .set("top","5px")
+      .duration(300)
+      .then()
+        .set("top","2px")
+        .duration(100)
+        .pop()
+      .end();
+    },
+  250
+);
 
 objButton1.onclick=function(){
   initButton();
