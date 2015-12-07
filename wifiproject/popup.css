@@ -6,7 +6,7 @@ html {
 body{
     height: 125mm;
     width: 73mm;
-    font-family: 'SFNSText', 'Helvetica Neue', "Meiryo UI", "MS PGothic", sans-serif;
+    font-family: 'Yu Gothic UI','SFNSText', 'Helvetica Neue', "Meiryo UI", "MS PGothic", sans-serif;
     margin: 0;
 }
 body .head{
