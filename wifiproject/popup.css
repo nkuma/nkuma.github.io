@@ -4,8 +4,8 @@ html {
   font-family: arial,sans-serif;
 }
 body{
-    height: 125mm;
-    width: 73mm;
+    /*height: 125mm;*/
+    /*width: 73mm;*/
     font-family: 'Yu Gothic UI','SFNSText', 'Helvetica Neue', "Meiryo UI", "MS PGothic", sans-serif;
     margin: 0;
 }
@@ -31,7 +31,7 @@ body .body{
   left: 105px;
 }
 #headerbox4{
-  background-color:grey;
+  /*background-color:grey;*/
   animation:breathe 5s linear 0s infinite normal;
 	-webkit-animation:breathe 5s linear 0s infinite normal;
 }
@@ -64,9 +64,9 @@ body .body{
     margin: 0 5px;
     position: absolute;
     top: -19px;
-    border: 2px solid #888;
-    width: 15px;
-    height: 15px;
+    /*border: 2px solid #888;*/
+    /*width: 15px;*/
+    /*height: 15px;*/
     text-align: center;
   }
 
