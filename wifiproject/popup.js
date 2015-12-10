@@ -76,42 +76,43 @@ setTimeout(
 );
 
 objButton1.onclick=function(){
-  initButton();
   pushButton(objButton1.id,function(){
       changeBodyClore(colorButton1);
-      setButtonColor(objButton1.id,colorButton1);
-
+      setButtonColor(objButton1.id,objButton1);
       hideButton(objButton1.id);
+      showButtons(objButton1.id);
     }
   );
+
 };
+
+
+
 objButton2.onclick=function(){
-  initButton();
   pushButton(objButton2.id,function(){
       changeBodyClore(colorButton2);
       setButtonColor(objButton2.id,colorButton2);
-
       hideButton(objButton2.id);
+      showButtons(objButton2.id);
     }
   );
 };
 
 objButton3.onclick=function(){
-  initButton();
   pushButton(objButton3.id,function(){
       changeBodyClore(colorButton3);
       setButtonColor(objButton3.id,objButton3);
-
       hideButton(objButton3.id);
+      showButtons(objButton3.id);
     }
   );
 }
 
-function hideButton(id){
+function hideButton(id,fn){
   move("#" + id)
     .set('height','0')
     .set('opacity', 0)
-    .end();
+    .end(fn);
 }
 
 function pushButton(id,fn){
@@ -128,32 +129,19 @@ function pushButton(id,fn){
 }
 
 function setButtonColor(currentButtonId,color){
-    initButton();
     //set button color
     move('#'+ currentButtonId )
       .set('background-color', color)
-      //.then()
-        //.set('opacity', 0)
-          //.then()
-          //.set('display', 'none')
-        //.pop()
       .end();
 }
 
-function initButton(){
-  // button color initialize
-  objButton1.style.backgroundColor = colorButton1;
-  objButton2.style.backgroundColor = colorButton2;
-  objButton3.style.backgroundColor = colorButton3;
-
-  //display button
-  objButton1.style.display = 'block';
-  objButton2.style.display = 'block';
-  objButton3.style.display = 'block';
-
-  move("#" + objButton1.id).set('height','10%').set('opacity', 1).end();
-  move("#" + objButton2.id).set('height','10%').set('opacity', 1).end();
-  move("#" + objButton3.id).set('height','10%').set('opacity', 1).end();
+function showButtons(id){
+  if(id!=objButton1.id)
+    move("#" + objButton1.id).set('height','10%').set('opacity', 1).end();
+  if(id!=objButton2.id)
+    move("#" + objButton2.id).set('height','10%').set('opacity', 1).end();
+  if(id!=objButton3.id)
+    move("#" + objButton3.id).set('height','10%').set('opacity', 1).end();
 }
 
 function changeBodyClore(color){
