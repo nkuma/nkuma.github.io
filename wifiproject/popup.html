@@ -10,7 +10,7 @@
   <div class="head">
     <div id="headerbox1" class="headerbox"><i class="fa fa-signal"></i></div>
     <div id="headerbox2" class="headerbox"><i class="fa fa-wifi"></i></div>
-    <div id="headerbox3" class="headerbox"></div>
+    <div id="headerbox3" class="headerbox"><i class="fa fa-link"></i>3</div>
     <div id="headerbox4" class="headerbox"><i class="fa fa-bolt"></i></div>
     <div id="headerbox5" class="headerbox"><i class="fa fa-battery-full"></i></div>
   </div>
@@ -21,8 +21,9 @@
       <div id="button3"class="box small button">ボタン３</div>
     </div>
   </div>
-  <canvas id="canvas" height="100" width="100"></canvas>
-
+  <div >
+    <canvas id="canvas" height="100" width="100" style="max-width: 100%;display: block;margin: 10px auto;"></canvas>
+  </div>
   <script src='move.min.js'></script>
   <script src='popup.js'></script>
   <script src="Chart.min.js"></script>
@@ -30,18 +31,18 @@
   <script>
   var data = [
   {
-    value: 30,
+    value: 70,
     color:"#ED6D00",
     highlight: "red",
     label: "label1"
   },
   {
-    value : 70,
+    value : 30,
     color : "gray",
     highlight: "yellow",
     label: "label2"
   }
-  ]
+];
   var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(data,{
     segmentStrokeColor : "#FFFFFF"
   });

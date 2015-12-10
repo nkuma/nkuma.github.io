@@ -77,58 +77,54 @@ setTimeout(
 
 objButton1.onclick=function(){
   initButton();
-  changeBodyClore(colorButton1);
-  setButtonColor(objButton1.id,'#FFFFFF');
+  pushButton(objButton1.id,function(){
+      changeBodyClore(colorButton1);
+      setButtonColor(objButton1.id,colorButton1);
 
+      hideButton(objButton1.id);
+    }
+  );
 };
-
 objButton2.onclick=function(){
   initButton();
-  move('.head .box')
-    .set('margin-left', 0)
-    .end();
-    changeBodyClore(colorButton2);
-    setButtonColor(objButton2.id,'#FFFFFF');
-    move("#" + objButton3.id)
-       .scale(0.95)
-       .duration(100)
-       .then()
-        .scale(2)
-        .duration(1000)
-       .pop()
-     .end(
-       function(){
-          setTimeout(
-            function(){
-              move("#body1")
-              .set('background-color', colorButton3)
-              .duration(1000)
-              .end();
-            }
-          ,1)
-          }
-         );
-};
-objButton3.onclick=function(){
-  //initButton();
+  pushButton(objButton2.id,function(){
+      changeBodyClore(colorButton2);
+      setButtonColor(objButton2.id,colorButton2);
 
-   move("#" + objButton3.id)
-      .scale(0.95)
-      .duration(100)
+      hideButton(objButton2.id);
+    }
+  );
+};
+
+objButton3.onclick=function(){
+  initButton();
+  pushButton(objButton3.id,function(){
+      changeBodyClore(colorButton3);
+      setButtonColor(objButton3.id,objButton3);
+
+      hideButton(objButton3.id);
+    }
+  );
+}
+
+function hideButton(id){
+  move("#" + id)
+    .set('height','0')
+    .set('opacity', 0)
+    .end();
+}
+
+function pushButton(id,fn){
+  move("#" + id)
+    .scale(0.95)
+    .duration(100)
     .end(
-      function(){
-      move("#" + objButton3.id)
-      .scale(2)
-      .duration(1000)
-      .end(function(){
-            move("#button1")
-            .set('background-color', 'red')
-            .duration(3000)
-            .end();
-          }
-        );
-      }
-    );
+     function(){
+       move("#" + id)
+          .scale(1)
+          .end(fn);
+     }
+   );
 }
 
 function setButtonColor(currentButtonId,color){
@@ -154,6 +150,10 @@ function initButton(){
   objButton1.style.display = 'block';
   objButton2.style.display = 'block';
   objButton3.style.display = 'block';
+
+  move("#" + objButton1.id).set('height','10%').set('opacity', 1).end();
+  move("#" + objButton2.id).set('height','10%').set('opacity', 1).end();
+  move("#" + objButton3.id).set('height','10%').set('opacity', 1).end();
 }
 
 function changeBodyClore(color){
