@@ -74,38 +74,51 @@ setTimeout(
     },
   250
 );
+objButton1.onmousedown=function(){
+  move("#" + objButton1.id).scale(0.95).duration(100).end();
+};
+objButton2.onmousedown=function(){
+  move("#" + objButton2.id).scale(0.95).duration(100).end();
+};
+objButton3.onmousedown=function(){
+  move("#" + objButton3.id).scale(0.95).duration(100).end();
+};
+
+document.onmouseup=function(){
+  move("#" + objButton1.id).scale(1).duration(100).end();
+  move("#" + objButton2.id).scale(1).duration(100).end();
+  move("#" + objButton3.id).scale(1).duration(100).end();
+};
 
 objButton1.onclick=function(){
-  pushButton(objButton1.id,function(){
+  //pushButton(objButton1.id,function(){
       changeBodyClore(colorButton1);
       setButtonColor(objButton1.id,objButton1);
       hideButton(objButton1.id);
       showButtons(objButton1.id);
-    }
-  );
+  //  }
+  //);
 
 };
 
-
-
 objButton2.onclick=function(){
-  pushButton(objButton2.id,function(){
+  //pushButton(objButton2.id,function(){
       changeBodyClore(colorButton2);
       setButtonColor(objButton2.id,colorButton2);
       hideButton(objButton2.id);
       showButtons(objButton2.id);
-    }
-  );
+  //  }
+  //);
 };
 
 objButton3.onclick=function(){
-  pushButton(objButton3.id,function(){
+  //pushButton(objButton3.id,function(){
       changeBodyClore(colorButton3);
       setButtonColor(objButton3.id,objButton3);
       hideButton(objButton3.id);
       showButtons(objButton3.id);
-    }
-  );
+    //}
+  //);
 }
 
 function hideButton(id,fn){
