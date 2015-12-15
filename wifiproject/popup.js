@@ -1,3 +1,4 @@
+var isMobile = true;
 
 objButton1 = document.getElementById("button1");
 objButton2 = document.getElementById("button2");
@@ -74,21 +75,42 @@ setTimeout(
     },
   250
 );
-objButton1.onmousedown=function(){
-  move("#" + objButton1.id).scale(0.95).duration(100).end();
-};
-objButton2.onmousedown=function(){
-  move("#" + objButton2.id).scale(0.95).duration(100).end();
-};
-objButton3.onmousedown=function(){
-  move("#" + objButton3.id).scale(0.95).duration(100).end();
-};
 
-document.onmouseup=function(){
-  move("#" + objButton1.id).scale(1).duration(100).end();
-  move("#" + objButton2.id).scale(1).duration(100).end();
-  move("#" + objButton3.id).scale(1).duration(100).end();
-};
+if(isMobile){
+  objButton1.ontouchstart=function(){
+    move("#" + objButton1.id).scale(0.95).duration(100).end();
+  };
+  objButton2.ontouchstart=function(){
+    move("#" + objButton2.id).scale(0.95).duration(100).end();
+  };
+  objButton3.ontouchstart=function(){
+    move("#" + objButton3.id).scale(0.95).duration(100).end();
+  };
+}else{
+  objButton1.onmousedown=function(){
+    move("#" + objButton1.id).scale(0.95).duration(100).end();
+  };
+  objButton2.onmousedown=function(){
+    move("#" + objButton2.id).scale(0.95).duration(100).end();
+  };
+  objButton3.onmousedown=function(){
+    move("#" + objButton3.id).scale(0.95).duration(100).end();
+  };
+}
+if(isMobile){
+  document.ontouchend=function(){
+      move("#" + objButton1.id).scale(1).duration(100).end();
+      move("#" + objButton2.id).scale(1).duration(100).end();
+      move("#" + objButton3.id).scale(1).duration(100).end();
+  };
+}else{
+  document.onmouseup=function(){
+      move("#" + objButton1.id).scale(1).duration(100).end();
+      move("#" + objButton2.id).scale(1).duration(100).end();
+      move("#" + objButton3.id).scale(1).duration(100).end();
+  };
+}
+
 
 objButton1.onclick=function(){
   //pushButton(objButton1.id,function(){
