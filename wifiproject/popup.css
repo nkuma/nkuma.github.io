@@ -8,6 +8,10 @@ body{
     /*width: 73mm;*/
     font-family: 'Yu Gothic UI','SFNSText', 'Helvetica Neue', "Meiryo UI", "MS PGothic", sans-serif;
     margin: 0;
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
 }
 body .head{
     margin-left: 25px;
